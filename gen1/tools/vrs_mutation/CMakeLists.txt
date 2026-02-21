@@ -30,8 +30,10 @@ FetchContent_Declare(
     SOURCE_DIR "${CMAKE_BINARY_DIR}/_deps/projectaria_tools-src/projectaria_tools"
 )
 FetchContent_MakeAvailable(projectaria_tools)
+add_subdirectory("${CMAKE_BINARY_DIR}/_deps/projectaria_tools-src/projectaria_tools/examples/Gen1/cpp_samples/vrs_mutation" vrs_mutation_sample)
 include_directories("${CMAKE_BINARY_DIR}/_deps/projectaria_tools-src")
-
+include_directories("${CMAKE_BINARY_DIR}/_deps/vrs-src")
+include_directories("${CMAKE_BINARY_DIR}/_deps/cli11-src/include")
 
 
 find_package(TorchVision REQUIRED)
